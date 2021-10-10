@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="materialDarkBlue">#161b22</color>
+    <color name="materialBlack">#0d1117</color>
+    <color name="materialGray">#888f99</color>
+    <color name="materialYellow">#FFEA00</color>
+    <color name="red">#FF0000</color>
+
+    <!--commit item -->
+    <color name="comit_item_bg">@color/white</color>
+    <color name="commit_message">@color/black</color>
+    <color name="commit_hash">@color/red</color>
 </resources>

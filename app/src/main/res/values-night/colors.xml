@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--commit item -->
+    <color name="comit_item_bg">@color/materialDarkBlue</color>
+    <color name="commit_message">@color/materialGray</color>
+    <color name="commit_hash">@color/materialYellow</color>
+
+</resources>
