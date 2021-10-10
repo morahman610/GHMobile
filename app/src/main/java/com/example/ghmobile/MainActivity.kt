@@ -13,6 +13,9 @@ class MainActivity : AppCompatActivity() {
 
     private val TAG = "MainActivity"
 
+    private lateinit var commitRecyclerViewAdapter : CommitRecyclerViewAdapter
+    private var commitList = mutableListOf<CommitResponseItem>()
+
     private lateinit var binding: ActivityMainBinding
 
 
@@ -27,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = MainActivityViewModel()
 
+        commitRecyclerViewAdapter = CommitRecyclerViewAdapter(commitList)
 
 
         lifecycleScope.launchWhenCreated {
@@ -34,7 +38,10 @@ class MainActivity : AppCompatActivity() {
 
             try {
                 if (commits.isSuccessful) {
-                    Log.d(TAG, "Network Call Success! : ${commits.body()}")
+                    commitList = commits.body()!!
+                    commitRecyclerViewAdapter = CommitRecyclerViewAdapter(commitList)
+                    binding.commitRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+                    binding.commitRecyclerView.adapter = commitRecyclerViewAdapter
 
                 } else {
                     Log.d(TAG, "error message: ${commits.errorBody()}")
